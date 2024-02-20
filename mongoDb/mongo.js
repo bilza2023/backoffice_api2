@@ -6,8 +6,7 @@ process.on('uncaughtException', function (err) {
     process.exit(1);
 });
 //.......................................................
-mongoose.connect( process.env.MONGO_DB_URL , { useNewUrlParser: true});
-// mongoose.connect( process.env.MONGO_DB_LOCAL_URL , { useNewUrlParser: true});
+mongoose.connect( process.env.DB_URL , { useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on('error',(error)=> {throw new Error(error)} );
